@@ -75,7 +75,7 @@ a{
 }
 a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:3px solid var(--ac-focus);outline-offset:3px}
-.hero :focus-visible,.site-footer :focus-visible{outline-color:var(--ac-cream)}
+.hero :focus-visible{outline-color:var(--ac-cream)}
 ul,ol{margin:0 0 1.25rem;padding-left:1.25rem}
 li{margin-bottom:.6rem}
 hr{border:0;border-top:1px solid var(--ac-rule);margin:2.5rem 0}
@@ -84,29 +84,7 @@ hr{border:0;border-top:1px solid var(--ac-rule);margin:2.5rem 0}
   position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
   overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
 }
-.skip-link{
-  position:absolute;left:1rem;top:-10rem;z-index:100;
-  background:var(--ac-dark);color:var(--ac-cream);
-  padding:.75rem 1rem;font-weight:700;text-decoration:none;
-}
-.skip-link:focus{top:1rem}
 
-/* ---------- Site chrome ---------- */
-.usp-bar{
-  background:var(--ac-moss);
-  font-size:.8125rem;font-weight:700;letter-spacing:.03em;
-  text-align:center;padding:.5rem var(--gutter);margin:0;
-}
-.site-header{
-  border-bottom:1px solid var(--ac-rule);
-  padding:1rem var(--gutter);
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-}
-.wordmark{
-  font-family:var(--font-h);font-weight:700;font-size:1.5rem;
-  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
-}
-.header-cta{display:flex;gap:.5rem;flex-wrap:wrap}
 
 /* ---------- Buttons (site style: square, uppercase) ---------- */
 .btn{
@@ -129,17 +107,12 @@ hr{border:0;border-top:1px solid var(--ac-rule);margin:2.5rem 0}
 /* ---------- Hero ---------- */
 .hero{background:var(--ac-dark);color:var(--ac-cream);padding:2.5rem var(--gutter) 2rem}
 .hero__inner{max-width:var(--measure);margin:0 auto}
-.breadcrumb ol{list-style:none;padding:0;margin:0 0 1.25rem;display:flex;flex-wrap:wrap;gap:.25rem;font-size:.8125rem}
-.breadcrumb li{margin:0}
-.breadcrumb li+li::before{content:"/";margin:0 .4rem 0 .15rem;opacity:.8}
-.breadcrumb a,.breadcrumb [aria-current]{color:var(--ac-cream)}
 .hero h1{color:var(--ac-cream);font-size:2.25rem;margin:0 0 1rem}
 .hero__meta{font-size:.875rem;margin:0;color:var(--ac-cream)}
 
 /* ---------- Layout ---------- */
 main{display:block}
 .article{max-width:var(--measure);margin:0 auto;padding:0 var(--gutter) 3rem}
-.wide{max-width:var(--wide);margin-left:auto;margin-right:auto}
 
 /* ---------- Table of contents ---------- */
 .toc{
@@ -183,8 +156,6 @@ thead .col-ours{background:#3d4a2d;color:#ffffff}
 /* ---------- Entries ---------- */
 .facts{list-style:none;padding:0;margin:0 0 1.5rem;border-top:1px solid var(--ac-rule)}
 .facts li{padding:.6rem 0;margin:0;border-bottom:1px solid var(--ac-rule)}
-.spec-list{list-style:none;padding:0}
-.spec-list li{padding-left:0}
 .checklist{padding-left:1.4rem}
 .checklist li{margin-bottom:1rem;padding-left:.25rem}
 
@@ -218,16 +189,87 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 .closer{background:var(--ac-cream);padding:2rem 1.25rem;margin:3rem 0 0}
 .closer h2{margin-top:0}
 
-/* ---------- FAQ ---------- */
-.faq h3{font-size:1.3125rem;margin-top:1.75rem}
-
-/* ---------- Footer ---------- */
-.site-footer{
-  background:var(--ac-dark);color:var(--ac-cream);
-  padding:2rem var(--gutter);font-size:.875rem;
+/* ---------- Room-fit planner ---------- */
+.planner{margin:2.5rem 0}
+.planner-tool{border:1px solid var(--ac-rule);background:var(--ac-white);margin:1.25rem 0 1.5rem}
+.pl-controls{background:var(--ac-cream);padding:1.25rem;display:grid;gap:1.1rem;border:0;margin:0}
+.pl-field{display:grid;gap:.35rem;min-width:0}
+.pl-field label,.pl-lbl{font-size:.9375rem;font-weight:700}
+.pl-hint{font-size:.8125rem;color:var(--ac-muted);line-height:1.45}
+.pl-inrow{display:flex;align-items:center;gap:.5rem}
+.pl-controls input,.pl-controls select{
+  font:inherit;font-size:1rem;width:100%;min-height:44px;padding:.5rem .75rem;
+  border:1px solid var(--ac-dark);border-radius:0;background:var(--ac-white);color:var(--ac-dark);
+  font-variant-numeric:tabular-nums;
 }
-.site-footer__inner{max-width:var(--measure);margin:0 auto}
-.site-footer a{color:var(--ac-cream)}
+.pl-unit{font-size:.875rem;color:var(--ac-muted);min-width:2ch}
+.pl-group{display:flex;flex-wrap:wrap;gap:.4rem}
+.pl-group button{
+  font:inherit;font-size:.875rem;font-weight:700;min-width:44px;min-height:44px;padding:.4rem .8rem;
+  border:1px solid var(--ac-dark);border-radius:0;background:var(--ac-white);color:var(--ac-dark);cursor:pointer;
+}
+.pl-group button[aria-pressed="true"]{background:var(--ac-dark);color:var(--ac-cream)}
+.pl-group button:focus-visible,.pl-card:focus-visible{outline:3px solid var(--ac-focus);outline-offset:2px}
+.pl-results{padding:1.25rem;display:grid;gap:1.25rem;min-width:0}
+.pl-feature{display:grid;gap:1rem}
+.pl-feature-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;align-items:flex-start}
+.pl-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac-muted)}
+.pl-title{font-family:var(--font-h);font-weight:700;font-size:1.375rem;line-height:1.25;margin:.15rem 0 0}
+.pl-stats{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:0}
+.pl-stats div{display:grid}
+.pl-stats dt{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ac-muted)}
+.pl-stats dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.pl-plan svg{display:block;width:100%;height:auto;max-height:380px}
+.pl-note{font-size:.875rem;color:var(--ac-muted);margin:0}
+.pl-bryce{background:var(--ac-moss);padding:.75rem 1rem;font-size:.9375rem;margin:0}
+.pl-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.8125rem;font-weight:700;padding:.2rem .6rem;border:1px solid currentColor;white-space:nowrap}
+.pl-badge::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:currentColor}
+.pl-fits{color:#2f6b45}.pl-tight{color:#8a5210}.pl-short{color:#a3362b}
+.pl-list-title{font-family:var(--font-b);font-size:1rem;font-weight:700;margin:0 0 .75rem}
+.pl-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.75rem}
+.pl-card{
+  font:inherit;text-align:left;color:var(--ac-dark);background:var(--ac-white);
+  border:1px solid var(--ac-rule);border-radius:0;padding:.75rem;display:grid;gap:.4rem;cursor:pointer;
+}
+.pl-card:hover{border-color:var(--ac-dark)}
+.pl-card[aria-pressed="true"]{border-color:var(--ac-dark);box-shadow:inset 0 0 0 1px var(--ac-dark);background:var(--ac-cream)}
+.pl-card svg{width:100%;height:70px}
+.pl-card .t{font-weight:700;font-size:.9375rem;line-height:1.3}
+.pl-card .r{font-size:.8125rem;color:var(--ac-muted)}
+.pl-empty{border:1px dashed var(--ac-muted);padding:1rem;margin:0}
+.p-room{fill:none;stroke:#b8b0a5;stroke-width:1.5;stroke-dasharray:6 5}
+.p-walk{fill:#f7f3ee;stroke:#8a847c;stroke-width:1;stroke-dasharray:5 4}
+.p-wall{stroke:#2b2a29;stroke-width:4}
+.p-sofa{fill:#c3cda6;stroke:#4a5636;stroke-width:1.5}
+.p-pleat{stroke:#4a5636;stroke-width:1.2;opacity:.6;fill:none}
+.p-ott{fill:#e2d3bf;stroke:#7d6a4e;stroke-width:1.5}
+.p-txt{fill:#55524e;font-family:var(--font-b);font-size:11px}
+.p-txt-strong{fill:#2b2a29;font-family:var(--font-b);font-size:11px;font-weight:700}
+.p-dim{stroke:#55524e;stroke-width:1}
+@media (min-width:52em){
+  .planner-tool{display:grid;grid-template-columns:17rem minmax(0,1fr)}
+}
+
+/* ---------- FAQ accordions (+/- toggles) ---------- */
+.faqs{border-top:1px solid var(--ac-dark);margin-top:1.25rem}
+.faq-item{border-bottom:1px solid var(--ac-rule)}
+.faq-item summary{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;
+  min-height:44px;padding:1.1rem .25rem;cursor:pointer;list-style:none;
+  font-family:var(--font-h);font-weight:700;font-size:1.25rem;line-height:1.3;letter-spacing:.01em;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::marker{content:""}
+.faq-item summary:hover{background:var(--ac-cream)}
+.faq-item summary:focus-visible{outline:3px solid var(--ac-focus);outline-offset:2px}
+.faq-icon{
+  width:16px;height:16px;flex-shrink:0;margin-top:.35rem;
+  stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;
+}
+.faq-item[open] .faq-icon .icon-vertical{display:none}
+.faq-a{padding:0 .25rem 1.25rem}
+.faq-a p:last-child{margin-bottom:0}
+
 .legal{font-style:italic;color:var(--ac-muted);font-size:.875rem;margin-top:2rem}
 
 /* ---------- Larger screens ---------- */
@@ -246,8 +288,9 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
   .hero h1{font-size:3rem}
 }
 @media print{
-  .usp-bar,.site-header .header-cta,.skip-link,.toc,.cta-row{display:none}
-  .hero{background:none;color:#000}.hero h1,.hero__meta,.breadcrumb a{color:#000}
+  .toc,.cta-row,.planner-tool{display:none}
+  .hero{background:none;color:#000}.hero h1,.hero__meta{color:#000}
+  .faq-item .faq-a{display:block}
 }
 </style>
 
@@ -278,14 +321,6 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
       "name": "Adorn Croft",
       "url": "https://adorncroft.com/",
       "logo": "https://adorncroft.com/wp-content/uploads/2025/12/adorn-croft-logo.png"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adorncroft.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adorncroft.com/blog/"},
-        {"@type": "ListItem", "position": 3, "name": "Ligne Roset Togo Alternatives, Honestly Compared", "item": "https://adorncroft.com/blog/togo-sofa-alternatives/"}
-      ]
     },
     {
       "@type": "ItemList",
@@ -340,12 +375,12 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
         {
           "@type": "Question",
           "name": "Is a Togo-style sofa comfortable, or is it too low?",
-          "acceptedAnswer": {"@type": "Answer", "text": "A Togo-style sofa is made for lounging and less suited to upright sitting. The seat sits about 15 inches (38 cm) off the floor by design, so you sink back rather than perch. Made-to-order versions can be built taller or deeper, and a single sample module or a showroom visit lets you try one first."}
+          "acceptedAnswer": {"@type": "Answer", "text": "A Togo-style sofa is made for lounging and less suited to upright sitting. The seat sits about 15\" (38 cm) off the floor by design, so you sink back rather than perch. Made-to-order versions can be built taller or deeper, and a single sample module or a showroom visit lets you try one first."}
         },
         {
           "@type": "Question",
           "name": "Togo vs. Ploum: which is more comfortable?",
-          "acceptedAnswer": {"@type": "Answer", "text": "The more comfortable one depends on how you like to sit, since both seats sit about 15 inches (38 cm) off the floor. The Togo is all foam, pleated and frameless, made for a casual slouch. The Ploum stretches a soft cover over a steel frame, with a deep seat that invites curling up in any direction, so it feels more like a nest."}
+          "acceptedAnswer": {"@type": "Answer", "text": "The more comfortable one depends on how you like to sit, since both seats sit about 15\" (38 cm) off the floor. The Togo is all foam, pleated and frameless, made for a casual slouch. The Ploum stretches a soft cover over a steel frame, with a deep seat that invites curling up in any direction, so it feels more like a nest."}
         }
       ]
     }
@@ -355,30 +390,12 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-
-<p class="usp-bar">Free US &amp; Canada shipping · 50% deposit to start your order</p>
-
-<header class="site-header">
-  <a class="wordmark" href="https://adorncroft.com/" aria-label="Adorn Croft home">Adorn Croft</a>
-  <div class="header-cta">
-    <a class="btn btn--moss" href="https://adorncroft.com/materials/">Free swatches</a>
-    <a class="btn btn--dark" href="https://adorncroft.com/design-call/">Free design call</a>
-  </div>
-</header>
 
 <main id="main">
 <article>
 
   <div class="hero">
     <div class="hero__inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="https://adorncroft.com/">Home</a></li>
-          <li><a href="https://adorncroft.com/blog/">Blog</a></li>
-          <li><span aria-current="page">Togo Sofa Alternatives</span></li>
-        </ol>
-      </nav>
       <h1>Ligne Roset Togo Alternatives, Honestly Compared</h1>
       <p class="hero__meta">Updated, with specs and prices checked, <time datetime="2026-10">October 2026</time></p>
     </div>
@@ -583,6 +600,90 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
       <p class="scroll-hint" aria-hidden="true">Swipe the table sideways to see every column.</p>
       <p class="table-note">Prices as listed on adorncroft.com in October 2026. Classic-collection fabrics (Classic Wide Wale Corduroy, Classic Velvet, and Classic Stripe among them) are included; premium fabrics and leathers cost extra.</p>
 
+      <section class="planner" aria-labelledby="room-fit-planner">
+        <h3 id="room-fit-planner">Will it fit? Plan your Togo-style layout</h3>
+        <p>Enter your wall length and how many people you want to seat, and the planner draws every standard layout that fits, to scale. It uses the module sizes from our Bryce set: a 68.9" (175 cm) three-seater and 34.3" (87 cm) single seaters, each 40.2" (102 cm) deep. Treat it as a starting point, since every piece can be made to a custom size on request.</p>
+
+        <div class="planner-tool">
+          <form class="pl-controls" id="pl-controls" aria-label="Room details">
+            <div class="pl-field">
+              <span class="pl-lbl" id="pl-units-lbl">Units</span>
+              <div class="pl-group" role="group" aria-labelledby="pl-units-lbl">
+                <button type="button" id="pl-u-in" aria-pressed="true">Inches</button>
+                <button type="button" id="pl-u-cm" aria-pressed="false">Centimeters</button>
+              </div>
+            </div>
+            <div class="pl-field">
+              <label for="pl-wall">Main wall length</label>
+              <div class="pl-inrow"><input type="number" id="pl-wall" min="30" step="1" inputmode="numeric" aria-describedby="pl-wall-hint"><span class="pl-unit" data-pl-unit></span></div>
+              <span class="pl-hint" id="pl-wall-hint">The wall the sofa backs onto, minus doors or radiators.</span>
+            </div>
+            <div class="pl-field">
+              <label for="pl-depth">Space in front of the wall</label>
+              <div class="pl-inrow"><input type="number" id="pl-depth" min="30" step="1" inputmode="numeric" aria-describedby="pl-depth-hint"><span class="pl-unit" data-pl-unit></span></div>
+              <span class="pl-hint" id="pl-depth-hint">From the wall to the TV, coffee table, or walkway on the far side.</span>
+            </div>
+            <div class="pl-field">
+              <label for="pl-layout">Layout</label>
+              <select id="pl-layout">
+                <option value="either">Straight or L-shaped</option>
+                <option value="straight">Straight only</option>
+                <option value="l">L-shaped only</option>
+              </select>
+            </div>
+            <div class="pl-field" id="pl-ret-field">
+              <label for="pl-ret">Side wall length (for L-shapes)</label>
+              <div class="pl-inrow"><input type="number" id="pl-ret" min="30" step="1" inputmode="numeric"><span class="pl-unit" data-pl-unit></span></div>
+            </div>
+            <div class="pl-field">
+              <span class="pl-lbl" id="pl-seats-lbl">People to seat</span>
+              <div class="pl-group" role="group" aria-labelledby="pl-seats-lbl" id="pl-seats"></div>
+            </div>
+            <div class="pl-field">
+              <span class="pl-lbl" id="pl-otts-lbl">Ottomans</span>
+              <div class="pl-group" role="group" aria-labelledby="pl-otts-lbl" id="pl-otts"></div>
+              <span class="pl-hint">Each ottoman is 34.3" (87 cm) wide and adds 31.5" (80 cm) in front of the seats.</span>
+            </div>
+          </form>
+
+          <div class="pl-results">
+            <p class="visually-hidden" id="pl-status" aria-live="polite"></p>
+            <div class="pl-feature" id="pl-feature"></div>
+            <div>
+              <h4 class="pl-list-title">Every layout that fits <span id="pl-count"></span></h4>
+              <div class="pl-cards" id="pl-cards"></div>
+            </div>
+          </div>
+        </div>
+        <noscript><p>The planner needs JavaScript. The table below covers the most common wall lengths.</p></noscript>
+
+        <h4 id="common-rooms">Which Togo-style layout fits my wall?</h4>
+        <p>The largest straight layout of our standard modules for common wall lengths, leaving at least 3" (8 cm) at each end:</p>
+        <div class="table-wrap" role="region" aria-labelledby="walls-caption" tabindex="0">
+          <table>
+            <caption id="walls-caption" class="visually-hidden">Largest straight Togo-style layout for common wall lengths</caption>
+            <thead>
+              <tr>
+                <th scope="col">Wall length</th>
+                <th scope="col">Largest straight layout</th>
+                <th scope="col">Seats</th>
+                <th scope="col">Total width</th>
+                <th scope="col">Wall to spare</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">84" (213 cm)</th><td>Three-seater</td><td>3</td><td>68.9" (175 cm)</td><td>15.1" (38 cm)</td></tr>
+              <tr><th scope="row">108" (274 cm)</th><td>Three-seater</td><td>3</td><td>68.9" (175 cm)</td><td>39.1" (99 cm)</td></tr>
+              <tr><th scope="row">120" (305 cm)</th><td>Three-seater + one single seater</td><td>4</td><td>103.1" (262 cm)</td><td>16.9" (43 cm)</td></tr>
+              <tr><th scope="row">144" (366 cm)</th><td>Three-seater + two single seaters (the Bryce set's seating)</td><td>5</td><td>137.4" (349 cm)</td><td>6.6" (17 cm)</td></tr>
+              <tr><th scope="row">168" (427 cm)</th><td>Two three-seaters</td><td>6</td><td>137.8" (350 cm)</td><td>30.2" (77 cm)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="scroll-hint" aria-hidden="true">Swipe the table sideways to see every column.</p>
+        <p class="table-note">Sizes from the Bryce set's three-seater and single seaters. The planner also leaves a 30" (76 cm) walkway in front of the seats, a common design guideline. Prices for each piece are in the table above.</p>
+      </section>
+
       <h3 id="why-ours-costs-more">Why ours costs more than a lookalike</h3>
       <p>Bespoke is the difference. A lookalike asks you to fit its sofa; we fit the sofa to you: the length of your wall, the seat height you like, the fabric you've been saving. After delivery, lifetime support handles repairs, replacement covers, and refills at a reasonable cost, and you pay the balance only once you've approved photos of the finished piece.</p>
 
@@ -738,30 +839,40 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
     <!-- ===== FAQ ===== -->
     <section class="faq" aria-labelledby="faq">
       <h2 id="faq">Togo alternatives: FAQ</h2>
-
-      <h3>What is the best alternative to the Ligne Roset Togo?</h3>
-      <p>The best Togo alternative depends on what you want to keep. For a designer label, B&amp;B Italia's Camaleonda shares the Togo's low, 1970s spirit. For the Togo silhouette in your own fabric and size, choose a made-to-order set like our <a href="https://adorncroft.com/product/togo-set-bryce/">Togo-Style Set: Bryce</a>. For the lowest price, a budget lookalike can work, as long as it publishes its foam density.</p>
-
-      <h3>How much does a Ligne Roset Togo cost?</h3>
-      <p>As of October 2026, a Ligne Roset Togo starts at $2,360 for an ottoman, $3,590 for a fireside chair, and $6,675 for a three-seat sofa, rising to $8,865 for the very large sofa, according to ligne-roset.com. Prices climb with fabric or leather choice, so ask an authorized dealer for a current quote.</p>
-
-      <h3>Why is the Togo sofa so expensive?</h3>
-      <p>The Togo's price reflects how it's made and who designed it. Each piece is handmade at Ligne Roset's factory in Briord, France, from three densities of polyether foam, with more than six hours of work in its signature pleats. You're also buying a 1973 Michel Ducaroy design with a devoted collector following. Our guide to <a href="https://adorncroft.com/blog/custom-sofa-cost/">what a custom sofa costs</a> puts that price in context.</p>
-
-      <h3>Is the Togo sofa worth it?</h3>
-      <p>The Togo is worth it if the label and provenance matter to you: it's handmade in France, authenticated, and still made by the house that launched it in 1973. If what you love is the shape, a made-to-order Togo-style sofa gets you the look in your own fabric for well under half the price per seat.</p>
-
-      <h3>Where can you buy an authentic Togo in the US?</h3>
-      <p>Buy an authentic Togo from a Ligne Roset showroom, ligne-roset.com, or an authorized retailer such as Design Within Reach. The online-only Togo File edition, in a single beige fabric, is the lowest-cost new option. Keep your paperwork, since it's the best proof of authenticity later.</p>
-
-      <h3>How can you tell an authentic Togo from a lookalike?</h3>
-      <p>Buying from an authorized Ligne Roset retailer, and keeping the paperwork, is the most reliable proof of a real Togo. Since March 2025, every new Togo also has a QR code on its back label that links to a <a href="https://www.ligne-roset.com/us/certificate-authenticity">digital certificate of authenticity</a>. Be wary of any listing that uses the Togo name without either.</p>
-
-      <h3>Is a Togo-style sofa comfortable, or is it too low?</h3>
-      <p>A Togo-style sofa is made for lounging and less suited to upright sitting. The seat sits about 15" (38 cm) off the floor by design, so you sink back rather than perch. Made-to-order versions can be built taller or deeper, and a single sample module or a showroom visit lets you try one first.</p>
-
-      <h3>Togo vs. Ploum: which is more comfortable?</h3>
-      <p>The more comfortable one depends on how you like to sit, since both seats sit about 15" (38 cm) off the floor. The Togo is all foam, pleated and frameless, made for a casual slouch. The Ploum stretches a soft cover over a steel frame, with a deep seat that invites curling up in any direction, so it feels more like a nest.</p>
+      <div class="faqs">
+        <details class="faq-item">
+          <summary><span>What is the best alternative to the Ligne Roset Togo?</span><svg class="faq-icon" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path class="icon-vertical" d="M7 1V13"/><path d="M13 7H1"/></svg></summary>
+          <div class="faq-a"><p>The best Togo alternative depends on what you want to keep. For a designer label, B&amp;B Italia's Camaleonda shares the Togo's low, 1970s spirit. For the Togo silhouette in your own fabric and size, choose a made-to-order set like our <a href="https://adorncroft.com/product/togo-set-bryce/">Togo-Style Set: Bryce</a>. For the lowest price, a budget lookalike can work, as long as it publishes its foam density.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span>How much does a Ligne Roset Togo cost?</span><svg class="faq-icon" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path class="icon-vertical" d="M7 1V13"/><path d="M13 7H1"/></svg></summary>
+          <div class="faq-a"><p>As of October 2026, a Ligne Roset Togo starts at $2,360 for an ottoman, $3,590 for a fireside chair, and $6,675 for a three-seat sofa, rising to $8,865 for the very large sofa, according to ligne-roset.com. Prices climb with fabric or leather choice, so ask an authorized dealer for a current quote.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span>Why is the Togo sofa so expensive?</span><svg class="faq-icon" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path class="icon-vertical" d="M7 1V13"/><path d="M13 7H1"/></svg></summary>
+          <div class="faq-a"><p>The Togo's price reflects how it's made and who designed it. Each piece is handmade at Ligne Roset's factory in Briord, France, from three densities of polyether foam, with more than six hours of work in its signature pleats. You're also buying a 1973 Michel Ducaroy design with a devoted collector following. Our guide to <a href="https://adorncroft.com/blog/custom-sofa-cost/">what a custom sofa costs</a> puts that price in context.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span>Is the Togo sofa worth it?</span><svg class="faq-icon" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path class="icon-vertical" d="M7 1V13"/><path d="M13 7H1"/></svg></summary>
+          <div class="faq-a"><p>The Togo is worth it if the label and provenance matter to you: it's handmade in France, authenticated, and still made by the house that launched it in 1973. If what you love is the shape, a made-to-order Togo-style sofa gets you the look in your own fabric for well under half the price per seat.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span>Where can you buy an authentic Togo in the US?</span><svg class="faq-icon" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path class="icon-vertical" d="M7 1V13"/><path d="M13 7H1"/></svg></summary>
+          <div class="faq-a"><p>Buy an authentic Togo from a Ligne Roset showroom, ligne-roset.com, or an authorized retailer such as Design Within Reach. The online-only Togo File edition, in a single beige fabric, is the lowest-cost new option. Keep your paperwork, since it's the best proof of authenticity later.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span>How can you tell an authentic Togo from a lookalike?</span><svg class="faq-icon" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path class="icon-vertical" d="M7 1V13"/><path d="M13 7H1"/></svg></summary>
+          <div class="faq-a"><p>Buying from an authorized Ligne Roset retailer, and keeping the paperwork, is the most reliable proof of a real Togo. Since March 2025, every new Togo also has a QR code on its back label that links to a <a href="https://www.ligne-roset.com/us/certificate-authenticity">digital certificate of authenticity</a>. Be wary of any listing that uses the Togo name without either.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span>Is a Togo-style sofa comfortable, or is it too low?</span><svg class="faq-icon" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path class="icon-vertical" d="M7 1V13"/><path d="M13 7H1"/></svg></summary>
+          <div class="faq-a"><p>A Togo-style sofa is made for lounging and less suited to upright sitting. The seat sits about 15" (38 cm) off the floor by design, so you sink back rather than perch. Made-to-order versions can be built taller or deeper, and a single sample module or a showroom visit lets you try one first.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span>Togo vs. Ploum: which is more comfortable?</span><svg class="faq-icon" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path class="icon-vertical" d="M7 1V13"/><path d="M13 7H1"/></svg></summary>
+          <div class="faq-a"><p>The more comfortable one depends on how you like to sit, since both seats sit about 15" (38 cm) off the floor. The Togo is all foam, pleated and frameless, made for a casual slouch. The Ploum stretches a soft cover over a steel frame, with a deep seat that invites curling up in any direction, so it feels more like a nest.</p></div>
+        </details>
+      </div>
     </section>
 
     <!-- ===== Closer ===== -->
@@ -788,11 +899,207 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 </article>
 </main>
 
-<footer class="site-footer">
-  <div class="site-footer__inner">
-    <p><a href="https://adorncroft.com/">Adorn Croft</a> · Made to order, designed with you.</p>
-    <p>Showroom: 355 Healdsburg Ave, Healdsburg, CA 95448</p>
-  </div>
-</footer>
+<script>
+/* Togo-style room-fit planner. Module sizes from the Bryce set (cm). The corner seater is drawn as a square the depth of the seats. */
+(function () {
+  var root = document.getElementById("pl-controls");
+  if (!root) return;
+  var CM = 2.54;
+  var M = {
+    three:   { w: 175, d: 102, seats: 3 },
+    single:  { w: 87,  d: 102, seats: 1 },
+    corner:  { w: 102, d: 102, seats: 1 },
+    ottoman: { w: 87,  d: 80,  seats: 0 }
+  };
+  var SIDE = 7.62, WALK = 76.2, TIGHT = 25.4, GAP = 6;
+  var state = { unit: "in", wall: 304.8, depth: 289.56, ret: 228.6, layout: "either", seats: 4, otts: 1, sel: 0 };
+  try { var u = localStorage.getItem("ac-planner-unit"); if (u === "in" || u === "cm") state.unit = u; } catch (e) {}
+
+  function $(id) { return document.getElementById(id); }
+  function fmt(cm) { return state.unit === "in" ? (cm / CM).toFixed(1).replace(/\.0$/, "") + "\"" : Math.round(cm) + " cm"; }
+  function words(n) { return ["", "one", "two", "three", "four"][n] || String(n); }
+
+  function runs(maxThree, maxSingle) {
+    var out = [];
+    for (var a = 0; a <= maxThree; a++) for (var b = 0; b <= maxSingle; b++) {
+      if (a + b === 0) continue;
+      out.push({ three: a, single: b, w: a * M.three.w + b * M.single.w, seats: a * 3 + b, pieces: a + b });
+    }
+    return out;
+  }
+  function runLabel(r) {
+    var p = [];
+    if (r.three) p.push(r.three === 1 ? "three-seater" : words(r.three) + " three-seaters");
+    if (r.single) p.push(r.single === 1 ? "one single seater" : words(r.single) + " single seaters");
+    return p.join(" + ");
+  }
+  function cap(t) { return t.charAt(0).toUpperCase() + t.slice(1); }
+  function depthStatus() {
+    var need = M.three.d + (state.otts ? M.ottoman.d + GAP : 0) + WALK;
+    if (state.depth >= need) return "fits";
+    if (state.depth >= need - TIGHT) return "tight";
+    return "short";
+  }
+
+  function build() {
+    var res = [], o = state.otts, st = depthStatus();
+    if (state.layout !== "l") runs(3, 4).forEach(function (r) {
+      if (r.w + 2 * SIDE > state.wall) return;
+      if (r.seats < state.seats || r.seats > state.seats + 2) return;
+      if (o * M.ottoman.w > r.w) return;
+      res.push({ type: "straight", main: r, ret: null, seats: r.seats, mainLen: r.w, retLen: 0, pieces: r.pieces,
+        label: cap(runLabel(r)), status: st, bryce: r.three === 1 && r.single === 2 && o === 2 });
+    });
+    if (state.layout !== "straight") runs(2, 3).forEach(function (m) {
+      runs(1, 2).forEach(function (s) {
+        var mainLen = M.corner.w + m.w, retLen = M.corner.d + s.w;
+        if (mainLen + SIDE > state.wall || retLen + SIDE > state.ret) return;
+        var seats = m.seats + 1 + s.seats;
+        if (seats < state.seats || seats > state.seats + 2) return;
+        if (o * M.ottoman.w > m.w) return;
+        res.push({ type: "l", main: m, ret: s, seats: seats, mainLen: mainLen, retLen: retLen, pieces: m.pieces + s.pieces + 1,
+          label: "L-shape: " + runLabel(m) + " + corner + " + runLabel(s), status: st, bryce: false });
+      });
+    });
+    var rank = { fits: 0, tight: 1, short: 2 };
+    res.sort(function (a, b) { return (a.seats - b.seats) || (rank[a.status] - rank[b.status]) || (a.pieces - b.pieces) || (a.mainLen - b.mainLen); });
+    return res.slice(0, 8);
+  }
+
+  function rects(c) {
+    var out = [], x, i, k;
+    function order(r) {
+      var arr = [], half = Math.ceil(r.single / 2);
+      for (i = 0; i < half; i++) arr.push("single");
+      for (i = 0; i < r.three; i++) arr.push("three");
+      for (i = half; i < r.single; i++) arr.push("single");
+      return arr;
+    }
+    var x0;
+    if (c.type === "straight") {
+      x = x0 = (state.wall - c.mainLen) / 2;
+      order(c.main).forEach(function (k) { out.push({ k: k, x: x, y: 0, w: M[k].w, h: M[k].d, dir: "h" }); x += M[k].w; });
+    } else {
+      out.push({ k: "corner", x: 0, y: 0, w: M.corner.w, h: M.corner.d, dir: "c" });
+      x = x0 = M.corner.w;
+      order(c.main).forEach(function (k) { out.push({ k: k, x: x, y: 0, w: M[k].w, h: M[k].d, dir: "h" }); x += M[k].w; });
+      var y = M.corner.d;
+      order(c.ret).forEach(function (k) { out.push({ k: k, x: 0, y: y, w: M[k].d, h: M[k].w, dir: "v" }); y += M[k].w; });
+    }
+    var ox = x0 + (c.main.w - state.otts * M.ottoman.w) / 2;
+    for (i = 0; i < state.otts; i++) { out.push({ k: "ottoman", x: ox, y: M.three.d + GAP, w: M.ottoman.w, h: M.ottoman.d, dir: "o" }); ox += M.ottoman.w; }
+    return out;
+  }
+
+  function plan(c, mini) {
+    var rs = rects(c), pad = mini ? 8 : 30;
+    var roomW = Math.max(state.wall, c.mainLen);
+    var roomH = Math.max(state.depth, c.type === "l" ? c.retLen : 0);
+    var s = [];
+    var aria = mini ? ' aria-hidden="true" focusable="false"' : ' role="img" aria-label="Floor plan, top view: ' + c.label + ", " + c.seats + ' seats"';
+    s.push('<svg viewBox="' + (-pad) + " " + (-pad) + " " + (roomW + pad * 2) + " " + (roomH + pad * 2) + '" preserveAspectRatio="xMidYMin meet"' + aria + ">");
+    s.push('<rect class="p-room" x="0" y="0" width="' + state.wall + '" height="' + roomH + '"/>');
+    var walkY = M.three.d + (state.otts ? M.ottoman.d + GAP : 0);
+    var walkX = c.type === "l" ? M.corner.w : 0;
+    var walkH = Math.max(0, Math.min(WALK, roomH - walkY));
+    if (walkH > 0) s.push('<rect class="p-walk" x="' + walkX + '" y="' + walkY + '" width="' + Math.max(0, state.wall - walkX) + '" height="' + walkH + '"/>');
+    s.push('<line class="p-wall" x1="0" y1="0" x2="' + state.wall + '" y2="0"/>');
+    if (c.type === "l") s.push('<line class="p-wall" x1="0" y1="0" x2="0" y2="' + Math.max(state.ret, c.retLen) + '"/>');
+    rs.forEach(function (r) {
+      var cls = r.k === "ottoman" ? "p-ott" : "p-sofa";
+      s.push('<rect class="' + cls + '" x="' + (r.x + 1) + '" y="' + (r.y + 1) + '" width="' + (r.w - 2) + '" height="' + (r.h - 2) + '" rx="' + (mini ? 10 : 14) + '"/>');
+      if (r.k !== "ottoman") for (var i = 1; i <= 3; i++) {
+        if (r.dir === "v") { var xx = r.x + r.w - (r.w / 4) * i; s.push('<path class="p-pleat" d="M' + xx + " " + (r.y + 8) + " L" + xx + " " + (r.y + r.h - 8) + '"/>'); }
+        else { var yy = r.y + (r.h / 4) * i; s.push('<path class="p-pleat" d="M' + (r.x + 8) + " " + yy + " L" + (r.x + r.w - 8) + " " + yy + '"/>'); }
+      }
+    });
+    if (!mini) {
+      s.push('<line class="p-dim" x1="0" y1="-12" x2="' + state.wall + '" y2="-12"/>');
+      s.push('<text class="p-txt-strong" x="' + state.wall / 2 + '" y="-17" text-anchor="middle">Wall ' + fmt(state.wall) + "</text>");
+      if (walkH > 14) s.push('<text class="p-txt" x="' + (walkX + 10) + '" y="' + (walkY + walkH / 2 + 4) + '">Walkway ' + fmt(WALK) + "</text>");
+      s.push('<text class="p-txt" x="' + (state.wall - 6) + '" y="' + (roomH - 8) + '" text-anchor="end">' + fmt(state.depth) + " to far side</text>");
+    }
+    s.push("</svg>");
+    return s.join("");
+  }
+
+  function badge(st) {
+    if (st === "fits") return '<span class="pl-badge pl-fits">Fits</span>';
+    if (st === "tight") return '<span class="pl-badge pl-tight">Tight on depth</span>';
+    return '<span class="pl-badge pl-short">Short on depth</span>';
+  }
+
+  function render() {
+    document.querySelectorAll("[data-pl-unit]").forEach(function (el) { el.textContent = state.unit; });
+    $("pl-u-in").setAttribute("aria-pressed", String(state.unit === "in"));
+    $("pl-u-cm").setAttribute("aria-pressed", String(state.unit === "cm"));
+    $("pl-ret-field").hidden = state.layout === "straight";
+    var list = build();
+    if (state.sel >= list.length) state.sel = 0;
+    $("pl-count").textContent = list.length ? "(" + list.length + ")" : "";
+    if (!list.length) {
+      $("pl-feature").innerHTML = '<p class="pl-empty">No standard layout seats ' + state.seats + " on a " + fmt(state.wall) + " wall. Try fewer seats or an L-shape, or ask our design team about custom-size modules.</p>" +
+        '<div><a class="btn btn--dark" href="https://adorncroft.com/design-call/">Ask about a custom size</a></div>';
+      $("pl-cards").innerHTML = "";
+      $("pl-status").textContent = "No standard layouts fit. Try fewer seats or an L-shape.";
+      return;
+    }
+    var c = list[state.sel];
+    var bryce = c.bryce ? '<p class="pl-bryce">This is the seating in our <a href="https://adorncroft.com/product/togo-set-bryce/">Togo-Style Set: Bryce</a>, five pieces from $6,040.</p>' : "";
+    $("pl-feature").innerHTML =
+      '<div class="pl-feature-head"><div><span class="pl-eyebrow">Selected layout</span><p class="pl-title">' + c.label + "</p></div>" + badge(c.status) + "</div>" +
+      '<dl class="pl-stats"><div><dt>Seats</dt><dd>' + c.seats + "</dd></div>" +
+      "<div><dt>Along main wall</dt><dd>" + fmt(c.mainLen) + "</dd></div>" +
+      (c.type === "l" ? "<div><dt>Along side wall</dt><dd>" + fmt(c.retLen) + "</dd></div>" : "") +
+      "<div><dt>Wall to spare</dt><dd>" + fmt(state.wall - c.mainLen) + "</dd></div></dl>" +
+      '<div class="pl-plan">' + plan(c, false) + "</div>" + bryce +
+      '<div><a class="btn btn--dark" href="https://adorncroft.com/design-call/">Book a free design call with this layout</a></div>' +
+      '<p class="pl-note">Bring this layout to your design call, and we’ll refine it to your room and sketch it in a free 2D rendering.</p>';
+    $("pl-cards").innerHTML = list.map(function (cfg, i) {
+      return '<button type="button" class="pl-card" data-i="' + i + '" aria-pressed="' + (i === state.sel) + '">' + plan(cfg, true) +
+        '<span class="t">' + cfg.label + '</span><span class="r">' + cfg.seats + " seats · " + fmt(cfg.mainLen) + " along the wall</span>" + badge(cfg.status) + "</button>";
+    }).join("");
+    $("pl-cards").querySelectorAll(".pl-card").forEach(function (b) {
+      b.addEventListener("click", function () { state.sel = +b.getAttribute("data-i"); render(); });
+    });
+    $("pl-status").textContent = list.length + (list.length === 1 ? " layout fits. " : " layouts fit. ") + "Selected: " + c.label + ", " + c.seats + " seats.";
+  }
+
+  function sync() {
+    var f = function (cm) { return state.unit === "in" ? Math.round(cm / CM) : Math.round(cm); };
+    $("pl-wall").value = f(state.wall); $("pl-depth").value = f(state.depth); $("pl-ret").value = f(state.ret);
+    $("pl-layout").value = state.layout;
+  }
+  function readNum(id, key) {
+    var v = parseFloat($(id).value);
+    if (!isFinite(v) || v <= 0) return;
+    state[key] = state.unit === "in" ? v * CM : v;
+    state.sel = 0; render();
+  }
+  function group(el, values, key) {
+    el.innerHTML = values.map(function (v) { return '<button type="button" data-v="' + v + '" aria-pressed="' + (state[key] === v) + '">' + v + "</button>"; }).join("");
+    el.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        state[key] = +b.getAttribute("data-v"); state.sel = 0;
+        el.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        render();
+      });
+    });
+  }
+  function setUnit(u) { state.unit = u; try { localStorage.setItem("ac-planner-unit", u); } catch (e) {} sync(); render(); }
+
+  [["pl-wall", "wall"], ["pl-depth", "depth"], ["pl-ret", "ret"]].forEach(function (p) {
+    $(p[0]).addEventListener("input", function () { readNum(p[0], p[1]); });
+  });
+  $("pl-layout").addEventListener("change", function (e) { state.layout = e.target.value; state.sel = 0; render(); });
+  $("pl-u-in").addEventListener("click", function () { setUnit("in"); });
+  $("pl-u-cm").addEventListener("click", function () { setUnit("cm"); });
+  root.addEventListener("submit", function (e) { e.preventDefault(); });
+  group($("pl-seats"), [1, 2, 3, 4, 5, 6, 7, 8], "seats");
+  group($("pl-otts"), [0, 1, 2], "otts");
+  sync(); render();
+})();
+</script>
+
 </body>
 </html>
