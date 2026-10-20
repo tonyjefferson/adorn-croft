@@ -262,6 +262,25 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
   .planner-tool{display:grid;grid-template-columns:17rem minmax(0,1fr)}
 }
 
+
+/* ---------- Swatch callout ---------- */
+.swatch-callout{background:var(--ac-moss);border-left:6px solid var(--ac-dark);padding:1.25rem;margin:1.5rem 0 2rem}
+.swatch-callout__title{font-family:var(--font-h);font-weight:700;font-size:1.375rem;line-height:1.25;margin:0 0 .4rem}
+.swatch-callout p{margin-bottom:1rem}
+
+/* ---------- Floating swatch bar ---------- */
+.float-bar{
+  position:fixed;left:50%;bottom:1rem;z-index:50;display:flex;gap:.5rem;align-items:center;
+  transform:translate(-50%,12px);opacity:0;visibility:hidden;pointer-events:none;
+  max-width:calc(100% - 2rem);
+}
+.float-bar.is-visible{transform:translate(-50%,0);opacity:1;visibility:visible;pointer-events:auto}
+@media (prefers-reduced-motion:no-preference){.float-bar{transition:opacity .25s ease,transform .25s ease,visibility .25s}}
+.float-bar .btn{box-shadow:0 4px 16px rgba(43,42,41,.25);white-space:nowrap}
+.float-top{width:44px;padding:0;flex-shrink:0}
+.float-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+@media print{.float-bar{display:none}}
+
 /* ---------- FAQ accordions (+/- toggles) ---------- */
 .faqs{border-top:1px solid var(--ac-dark);margin-top:1.25rem}
 .faq-item{border-bottom:1px solid var(--ac-rule)}
@@ -458,7 +477,7 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
     <!-- ===== Comparison ===== -->
     <section aria-labelledby="compare">
       <h2 id="compare">How the Togo compares with made-to-order and budget alternatives on price, foam, and warranty</h2>
-      <p>Priced per seat, a made-to-order Togo-style sofa costs less than half as much as the original (about $953 vs. $2,225). A budget lookalike costs less still, but rarely tells you what's inside.</p>
+      <p>Compared sofa to sofa, a made-to-order Togo-style three-seater costs less than half as much as the original: from $2,859.99 in leather versus $6,675. A budget lookalike costs less still, but rarely tells you what's inside.</p>
 
       <div class="table-wrap" role="region" aria-labelledby="compare-caption" tabindex="0">
         <table>
@@ -511,8 +530,14 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
             <tr>
               <th scope="row">Returns</th>
               <td>None on made-to-order pieces</td>
-              <td class="col-ours">None on made-to-order pieces</td>
+              <td class="col-ours">Final sale; you approve photos of the finished piece before paying the balance</td>
               <td>Varies by retailer</td>
+            </tr>
+            <tr>
+              <th scope="row">Ways to try first</th>
+              <td>Showrooms and authorized retailers</td>
+              <td class="col-ours">20 free swatches, a sample module, or the Healdsburg showroom</td>
+              <td>Rarely any</td>
             </tr>
           </tbody>
         </table>
@@ -548,7 +573,7 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
     <section aria-labelledby="made-to-order">
       <h2 id="made-to-order">Custom Togo-style sofas: made to order in your size, your fabric, your color</h2>
       <p>If it's the Togo's shape you love more than its label, having one made to order gets you the silhouette without the original's price or its set sizes.</p>
-      <p>Our <a href="https://adorncroft.com/sofas/modular/togo-sofas/">Togo-style collection</a> keeps the silhouette and gives you control over every other detail: the fabric, the color, the size, and the layout. Choose from <a href="https://adorncroft.com/materials/">1,500+ fabrics</a>: wide-wale corduroy (a customer fave!), cotton velvet with a soft, low sheen, or full-grain leather that ages into a rich patina. Each module is upholstered on its own, so a grass-green corner can run straight into a marigold seat. Let your imagination run wild—or check out our <a href="https://adorncroft.com/inspiration-gallery/">inspiration gallery</a> for ideas.</p>
+      <p>Our <a href="https://adorncroft.com/sofas/modular/togo-sofas/">Togo-style collection</a> keeps the silhouette and gives you control over every other detail: the fabric, the color, the size, and the layout. Choose from <a href="https://adorncroft.com/materials/">1,500+ fabrics</a>: wide-wale corduroy (a customer favorite), cotton velvet with a soft, low sheen, or full-grain leather that ages into a rich patina. Each module is upholstered on its own, so a grass-green corner can run straight into a marigold seat. Let your imagination run wild—or check out our <a href="https://adorncroft.com/inspiration-gallery/">inspiration gallery</a> for ideas.</p>
       <p>Every Togo-style piece mixes and matches with the others. Start with a single fireside chair, turn a straight run into an L with a corner seater, or go straight to the full Bryce set. Sizes can be adjusted on request, whether that's a little shorter for an alcove or a little taller if you'd rather not sink down into your seat. Most pieces come in an outdoor version too.</p>
 
       <div class="ph" role="note" aria-label="Placeholder: founder quote">
@@ -610,6 +635,12 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
       </div>
       <p class="scroll-hint" aria-hidden="true">Swipe the table sideways to see every column.</p>
       <p class="table-note">Prices as listed on adorncroft.com in October 2026. Classic-collection fabrics (Classic Wide Wale Corduroy, Classic Velvet, and Classic Stripe among them) are included; premium fabrics and leathers cost extra.</p>
+
+      <aside class="swatch-callout" aria-labelledby="swatch-callout-title">
+        <p class="swatch-callout__title" id="swatch-callout-title">Not sure about the color?</p>
+        <p>We'll mail you up to 20 free swatches, delivered in about 10 days, so you can see them in your own light before you commit.</p>
+        <a class="btn btn--dark" href="https://adorncroft.com/materials/">Get your 20 free swatches</a>
+      </aside>
 
       <section class="planner" aria-labelledby="room-fit-planner">
         <h3 id="room-fit-planner">Togo-style sofa room planner: find the layout your wall was made for</h3>
@@ -754,7 +785,7 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
       </ul>
 
       <h3>Sohnne Togo Series: the original's proportions at a mid-range price, with 60-day returns</h3>
-      <p>Sohnne builds its Togo Series to the original's proportions: its three-seat sofa is 68" wide with a 15" (38 cm) seat, in Kvadrat fabric or aniline leather. It comes with a 60-day return window and a 5-year limited warranty.</p>
+      <p>Sohnne builds its Togo Series to the original's proportions: its three-seat sofa is 68" wide with a 15" (38 cm) seat height, in Kvadrat fabric or aniline leather. It comes with a 60-day return window and a 5-year limited warranty.</p>
       <ul class="facts">
         <li><strong>Best for:</strong> buyers who want the original's proportions with an easy exit</li>
         <li><strong>Price signal:</strong> three-seat sofa $1,649 on sale (list $2,748); ottoman from $499 (as of October 2026)</li>
@@ -1086,5 +1117,36 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 })();
 </script>
 
+<div class="float-bar" id="float-bar" aria-hidden="true">
+  <a class="btn btn--cream float-top" href="#main" aria-label="Back to top" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+  <a class="btn btn--dark" href="https://adorncroft.com/materials/" tabindex="-1">Get 20 free swatches</a>
+</div>
+<script>
+/* Floating swatch bar: appears after the intro, hides near the closing call to action. */
+(function () {
+  var bar = document.getElementById("float-bar");
+  if (!bar) return;
+  var closer = document.querySelector(".closer");
+  var nearEnd = false;
+  var links = bar.querySelectorAll("a");
+  function update() {
+    var show = (window.pageYOffset || document.documentElement.scrollTop) > 600 && !nearEnd;
+    bar.classList.toggle("is-visible", show);
+    bar.setAttribute("aria-hidden", show ? "false" : "true");
+    links.forEach(function (a) { a.tabIndex = show ? 0 : -1; });
+  }
+  if (closer && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (e) { nearEnd = e[0].isIntersecting; update(); }).observe(closer);
+  }
+  bar.querySelector(".float-top").addEventListener("click", function (e) {
+    e.preventDefault();
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    var h1 = document.querySelector("h1"); if (h1) { h1.setAttribute("tabindex", "-1"); h1.focus({ preventScroll: true }); }
+  });
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+})();
+</script>
 </body>
 </html>
