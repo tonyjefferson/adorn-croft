@@ -174,8 +174,7 @@ thead .col-ours{background:#3d4a2d;color:#ffffff}
   aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:center;
   align-items:center;text-align:center;margin:2rem 0 .5rem;background:var(--ac-sand);
 }
-.ph--hero{aspect-ratio:16/10;margin:0}
-@media (min-width:40em){.ph--hero{aspect-ratio:21/9}}
+
 figure{margin:0 0 2rem}
 figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 .ph-inline{
@@ -184,6 +183,10 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 }
 .hero-figure{max-width:var(--wide);margin:0 auto;padding:0 var(--gutter)}
 .hero-figure figure{margin:1.5rem 0 0}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 62%;background:var(--ac-sand)}
+@media (min-width:40em){.hero-img{aspect-ratio:16/9}}
+.closer-figure{margin:1.75rem auto 0;max-width:24rem}
+.closer-figure img{display:block;width:100%;height:auto;background:var(--ac-sand)}
 
 /* ---------- Designers + callouts ---------- */
 .callout{background:var(--ac-moss);padding:1.5rem 1.25rem;margin:2.5rem 0}
@@ -410,11 +413,7 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 
   <div class="hero-figure">
     <figure>
-      <div class="ph ph--image ph--hero" role="img" aria-label="Image placeholder: Togo-Style Set: Bryce in red">
-        <span class="ph__label">Image placeholder</span>
-        Togo-Style Set: Bryce (a three-seater, two single seaters, and two ottomans) in red
-      </div>
-      <figcaption>Alt text: “Adorn Croft Togo-style Bryce set in red.”</figcaption>
+      <img class="hero-img" src="https://adorncroft.com/wp-content/uploads/2026/09/Bryce-1.webp" width="1254" height="1254" alt="Adorn Croft Togo-style Bryce set in burnt-orange fabric in a sunlit living room" fetchpriority="high" decoding="async">
     </figure>
   </div>
 
@@ -860,11 +859,8 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
       <h2 id="design-yours">Ready to design your own Togo-style sofa?</h2>
       <p>Whichever route you take, the best Togo alternative is the one that fits the way you actually live. The Togo proved in 1973 that a sofa could be squishy and sharp at the same time: soft enough to sink into, striking enough to own the room. Our <a href="https://adorncroft.com/sofas/modular/togo-sofas/">Togo-style collection</a> carries that idea into Lunar Green <a href="https://adorncroft.com/materials/fabrics/corduroy/">corduroy</a>, deep cotton <a href="https://adorncroft.com/materials/fabrics/velvet/">velvet</a>, buttery <a href="https://adorncroft.com/materials/leather/genuine-leather/">nubuck leather</a>, or whatever color your room has been waiting for. Send us your floor plan, and we'll sketch a layout on a free design call, render it, and mail you up to 20 free swatches to hold against your walls.</p>
 
-      <figure>
-        <div class="ph ph--image" role="img" aria-label="Photo placeholder: a customer's room with a Togo-style piece">
-          <span class="ph__label">Photo placeholder</span>
-          A customer's room with a Togo-style piece, captioned with the fabric and city
-        </div>
+      <figure class="closer-figure">
+        <img src="https://adorncroft.com/wp-content/uploads/2025/05/togo6-1152x1536.jpg" width="1152" height="1536" alt="Togo-style fireside chair in a multicolor patchwork fabric on a round rug in a sunlit room" loading="lazy" decoding="async">
       </figure>
 
       <div class="cta-row">
