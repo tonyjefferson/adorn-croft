@@ -185,8 +185,15 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 .hero-figure figure{margin:1.5rem 0 0}
 .hero-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 62%;background:var(--ac-sand)}
 @media (min-width:40em){.hero-img{aspect-ratio:16/9}}
-.closer-figure{margin:1.75rem auto 0;max-width:24rem}
-.closer-figure img{display:block;width:100%;height:auto;background:var(--ac-sand)}
+.closer-grid{display:grid;gap:1.5rem}
+.closer-copy .cta-row{margin-bottom:0}
+.closer-figure{margin:0;order:-1}
+@media (min-width:52em){.closer-figure{order:0}}
+.closer-figure img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 70%;background:var(--ac-sand)}
+@media (min-width:52em){
+  .closer-grid{grid-template-columns:minmax(0,1fr) 15rem;align-items:center;gap:2rem}
+  .closer-figure img{aspect-ratio:3/4}
+}
 
 /* ---------- Designers + callouts ---------- */
 .callout{background:var(--ac-moss);padding:1.5rem 1.25rem;margin:2.5rem 0}
@@ -856,16 +863,18 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
 
     <!-- ===== Closer ===== -->
     <section class="closer" aria-labelledby="design-yours">
-      <h2 id="design-yours">Ready to design your own Togo-style sofa?</h2>
-      <p>Whichever route you take, the best Togo alternative is the one that fits the way you actually live. The Togo proved in 1973 that a sofa could be squishy and sharp at the same time: soft enough to sink into, striking enough to own the room. Our <a href="https://adorncroft.com/sofas/modular/togo-sofas/">Togo-style collection</a> carries that idea into Lunar Green <a href="https://adorncroft.com/materials/fabrics/corduroy/">corduroy</a>, deep cotton <a href="https://adorncroft.com/materials/fabrics/velvet/">velvet</a>, buttery <a href="https://adorncroft.com/materials/leather/genuine-leather/">nubuck leather</a>, or whatever color your room has been waiting for. Send us your floor plan, and we'll sketch a layout on a free design call, render it, and mail you up to 20 free swatches to hold against your walls.</p>
-
-      <figure class="closer-figure">
-        <img src="https://adorncroft.com/wp-content/uploads/2025/05/togo6-1152x1536.jpg" width="1152" height="1536" alt="Togo-style fireside chair in a multicolor patchwork fabric on a round rug in a sunlit room" loading="lazy" decoding="async">
-      </figure>
-
-      <div class="cta-row">
-        <a class="btn btn--dark" href="https://adorncroft.com/design-call/">Start yours on a free design call</a>
-        <a class="btn btn--moss" href="https://adorncroft.com/materials/">Get your 20 free swatches</a>
+      <div class="closer-grid">
+        <div class="closer-copy">
+          <h2 id="design-yours">Ready to design your own Togo-style sofa?</h2>
+    <p>Whichever route you take, the best Togo alternative is the one that fits the way you actually live. The Togo proved in 1973 that a sofa could be squishy and sharp at the same time: soft enough to sink into, striking enough to own the room. Our <a href="https://adorncroft.com/sofas/modular/togo-sofas/">Togo-style collection</a> carries that idea into Lunar Green <a href="https://adorncroft.com/materials/fabrics/corduroy/">corduroy</a>, deep cotton <a href="https://adorncroft.com/materials/fabrics/velvet/">velvet</a>, buttery <a href="https://adorncroft.com/materials/leather/genuine-leather/">nubuck leather</a>, or whatever color your room has been waiting for. Send us your floor plan, and we'll sketch a layout on a free design call, render it, and mail you up to 20 free swatches to hold against your walls.</p>
+          <div class="cta-row">
+            <a class="btn btn--dark" href="https://adorncroft.com/design-call/">Start yours on a free design call</a>
+            <a class="btn btn--moss" href="https://adorncroft.com/materials/">Get your 20 free swatches</a>
+          </div>
+        </div>
+        <figure class="closer-figure">
+          <img src="https://adorncroft.com/wp-content/uploads/2025/05/togo6-1152x1536.jpg" width="1152" height="1536" alt="Togo-style fireside chair in a multicolor patchwork fabric on a round rug in a sunlit room" loading="lazy" decoding="async">
+        </figure>
       </div>
     </section>
 
