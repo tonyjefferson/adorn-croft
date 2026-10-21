@@ -106,7 +106,7 @@ hr{border:0;border-top:1px solid var(--ac-rule);margin:2.5rem 0}
 
 /* ---------- Hero ---------- */
 .hero{background:var(--ac-dark);color:var(--ac-cream);padding:2.5rem var(--gutter) 2rem}
-.hero__inner{max-width:var(--measure);margin:0 auto}
+.hero__inner{max-width:calc(var(--measure) - 2 * var(--gutter));margin:0 auto}
 .hero h1{color:var(--ac-cream);font-size:2.25rem;margin:0 0 1rem}
 .hero__meta{font-size:.875rem;margin:0;color:var(--ac-cream)}
 
@@ -181,10 +181,10 @@ figcaption{font-size:.8125rem;color:var(--ac-muted);margin-top:.4rem}
   display:inline-block;border:1px dashed #8a847c;background:#faf8f5;
   padding:0 .4rem;font-size:.875rem;
 }
-.hero-figure{max-width:var(--wide);margin:0 auto;padding:0 var(--gutter)}
-.hero-figure figure{margin:1.5rem 0 0}
-.hero-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 62%;background:var(--ac-sand)}
-@media (min-width:40em){.hero-img{aspect-ratio:16/9}}
+.hero-figure{max-width:var(--measure);margin:0 auto;padding:0 var(--gutter)}
+.hero-figure figure{margin:1.5rem 0 2rem}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 60%;border-radius:12px;background:var(--ac-sand)}
+@media (min-width:40em){.hero-img{aspect-ratio:3/2;border-radius:16px}}
 .closer-grid{display:grid;gap:1.5rem}
 .closer-copy .cta-row{margin-bottom:0}
 .closer-figure{margin:0;order:-1}
